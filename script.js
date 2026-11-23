@@ -142,3 +142,25 @@ contactForm.addEventListener("submit", function (event) {
 
 });
 
+
+/* =====================================
+   NAVBAR SCROLL EFFECT
+===================================== */
+
+const header = document.querySelector(".header");
+
+function handleNavbarScroll() {
+    if (!header) return;
+
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+}
+
+// Jalankan saat halaman di-scroll
+window.addEventListener("scroll", handleNavbarScroll);
+
+// Periksa posisi halaman saat pertama kali dibuka
+handleNavbarScroll();

@@ -766,3 +766,121 @@ ul {
 }
 
 
+/* =====================================
+   SMOOTH SCROLLING
+===================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Memberi jarak agar judul section
+   tidak tertutup navbar saat diklik */
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* =====================================
+   STICKY NAVBAR
+===================================== */
+
+/* Navbar tetap berada di atas halaman */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Efek ketika halaman di-scroll */
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================
+   BUTTON HOVER EFFECT
+===================================== */
+
+button,
+.btn,
+.btn-primary,
+.btn-secondary {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+button:active,
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================
+   PROJECT CARD HOVER EFFECT
+===================================== */
+
+.project-card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================
+   RESPONSIVE & ACCESSIBILITY
+===================================== */
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 75px;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    button,
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    .project-card {
+        transition: none;
+    }
+
+    button:hover,
+    .btn:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .project-card:hover {
+        transform: none;
+    }
+}
+
